@@ -18,7 +18,7 @@ import VideocamOffIcon from "@mui/icons-material/VideocamOff";
 import styles from "../styles/VideoComponent.module.css";
 import Badge from "@mui/material/Badge";
 
-const server_url = "http://localhost:8080";
+const server_url = "https://meetlybackend-9pd7.onrender.com";
 const connections = {};
 
 const peerConfiguration = {
