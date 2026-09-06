@@ -3,8 +3,8 @@ import Authentication from "./pages/Authentication.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
 import {Route,BrowserRouter as Router,Routes} from "react-router-dom";
 import VideoMeet from "./pages/VideoMeet.jsx";
-import HomeComponent from "./pages/HomeComponent.jsx";
-import History from './pages/History';
+import HomeComponent from "./pages/HomeComponent";
+import History from './pages/History.jsx';
 
 
 function App() {

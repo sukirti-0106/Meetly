@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import withAuth from '../utils/withAuth';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import "../app.css";
+import "../App.css";
 import { AuthContext } from '../contexts/AuthContext';
 import { IconButton, Button, TextField } from '@mui/material';
 import RestoreIcon from "@mui/icons-material/Restore";
