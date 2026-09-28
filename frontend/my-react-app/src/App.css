@@ -1,61 +1,314 @@
-.landingPageContainer{
-  width:100vw;
-  height:100vh;
- background-repeat:no-repeat;
-  background-size:cover;
+
+.landingPageContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-image: url("/public/background.png");
-}
-.landingPageContainer nav{
-  color:white;
-  display:flex;
-  justify-content: space-between;
-  padding-inline: 1.2rem;
-  padding-block: 1.6rem;
-  align-items: center;
-}
-.landingPageContainer nav h1{
-  font-size: 1.8rem;
-  font-weight:500;
- 
-}
-.landingPageContainer nav .nav-list{
   display: flex;
-  gap:30px;
-  cursor:pointer;
-  font-size: 18px;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
-.landingPageMain{
+
+.landingPageContainer nav {
+  color: white;
   display: flex;
-  color:white;
   justify-content: space-between;
   padding-inline: 3rem;
-  height:70vh;
+  padding-block: 1.2rem;
   align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.landingPageMain .content{
-  font-size: 2rem;
+
+.landingPageContainer nav h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
 }
+
+.landingPageContainer nav h1 .logo-highlight {
+  color: #FF9839;
+}
+
+.landingPageContainer nav .nav-list {
+  display: flex;
+  gap: 32px;
+  cursor: pointer;
+  font-size: 17px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.landingPageContainer nav .nav-list p {
+  margin: 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.landingPageContainer nav .nav-list p:hover {
+  color: #FF9839;
+}
+
+
+.landingPageContainer nav .nav-list p::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #FF9839;
+  transition: width 0.3s ease;
+}
+
+.landingPageContainer nav .nav-list p:hover::after {
+  width: 100%;
+}
+
+.landingPageContainer nav .nav-list .loginBtn {
+  background: linear-gradient(135deg, #FF9839 0%, #f57c00 100%);
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(255, 152, 57, 0.3);
+  transition: all 0.3s ease;
+}
+
+.landingPageContainer nav .nav-list .loginBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 57, 0.5);
+}
+
+.landingPageContainer nav .nav-list .loginBtn p {
+  color: white;
+  font-weight: 600;
+}
+
+.landingPageContainer nav .nav-list .loginBtn p::after {
+  display: none;
+}
+
+
+.landingPageMain {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  padding-inline: 4rem;
+  min-height: 80vh;
+  align-items: center;
+  flex: 1;
+}
+
+.landingPageMain .content.glass-card {
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.landingPageMain .content h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landingPageMain .content .subText {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+
+
 .landingPageMain .content div[role="button"] {
-  background:#FF9839;
-  width:fit-content;
+  background: linear-gradient(135deg, #FF9839 0%, #f57c00 100%);
+  width: fit-content;
+  border-radius: 30px;
+  padding: 0.9rem 2.2rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 152, 57, 0.4);
+  transition: all 0.3s ease;
+}
+
+.landingPageMain .content div[role="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 152, 57, 0.6);
+}
+
+.landingPageMain .content div[role="button"] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.landingPageMain .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.heroImageFrame {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+   0 0 30px rgba(255, 152, 57, 0.15); /* Soft Orange Glowing Backdrop */
+  transition: all 0.4s ease;
+}
+
+.heroImageFrame:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 
+   0 0 45px rgba(255, 152, 57, 0.3);
+  border-color: rgba(255, 152, 57, 0.4);
+}
+
+.heroImageFrame img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.featuresWrapper {
+  padding: 4rem 3rem 6rem 3rem;
+  text-align: center;
+  color: white;
+}
+
+.featuresTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  letter-spacing: -0.5px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
-  padding:1rem;
-  margin-top: 1.9rem;
-
-
-}
-.landingPageMain .content div[role="button"] a{
-   text-decoration: none;
-   color:white;
-  
-   font-size: 1.7rem;
-
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.landingPageMain .right img{
-  height:70vh;
-  width:auto;
+.featureCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 152, 57, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 152, 57, 0.15);
 }
+
+.featureIcon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+}
+
+.featureCard p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+@media (max-width: 900px) {
+  .landingPageContainer nav {
+    flex-direction: column;
+    padding-inline: 1.5rem;
+    gap: 15px;
+  }
+
+  .landingPageContainer nav .nav-list {
+    gap: 20px;
+    font-size: 15px;
+  }
+
+  .landingPageMain .right,
+  .landingPageMain .right img {
+    display: none !important;
+  }
+
+  .landingPageMain {
+    flex-direction: column;
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+    justify-content: center;
+  }
+
+  .landingPageMain .content.glass-card {
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .landingPageMain .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .landingPageMain .content div[role="button"] {
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .featuresWrapper {
+    padding: 2rem 1.5rem 4rem 1.5rem;
+  }
+}
+
+
 .homeWrapper {
   width: 100%;
   min-height: 100vh;
@@ -64,7 +317,6 @@
   flex-direction: column;
 }
 
-/* 1. Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -82,7 +334,6 @@
   letter-spacing: -0.5px;
 }
 
-/* 2. Main Two-Column Layout */
 .meetContainer {
   flex: 1;
   max-width: 1200px;
@@ -96,7 +347,6 @@
   box-sizing: border-box;
 }
 
-/* Left Section: Text + Action Bar */
 .leftPanel {
   flex: 1;
   max-width: 520px;
@@ -113,7 +363,6 @@
   letter-spacing: -0.8px;
 }
 
-/* Input + Button Container */
 .leftPanel > div {
   display: flex;
   align-items: stretch;
@@ -134,7 +383,6 @@
   padding: 0 24px;
 }
 
-/* Right Section: Visual Image */
 .rightPanel {
   flex: 1;
   display: flex;
@@ -153,7 +401,6 @@
   border: 1px solid #e2e8f0;
 }
 
-/* Responsive adjustment */
 @media (max-width: 900px) {
   .meetContainer {
     flex-direction: column-reverse;
