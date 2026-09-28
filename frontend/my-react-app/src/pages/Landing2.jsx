@@ -39,7 +39,7 @@ export default function Landing() {
 
           </div>
           <div className="right">
-             <img src="../public/mobile.png"></img>
+             <img src="/mobile.png"></img>
           </div>
         </div>
 
