@@ -510,25 +510,57 @@ export default function VideoMeet() {
   };
 
   return (
-  <div>
+  <div style={{
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#121212",
+    color: "#ffffff",
+    padding: "20px"
+  }}>
     {askForUsername === true ? (
-      <div>
-        <h2>Enter into lobby</h2>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "20px",
+        padding: "30px",
+        borderRadius: "12px",
+        backgroundColor: "#1e1e1e",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+        maxWidth: "450px",
+        width: "100%"
+      }}>
+        <h2 style={{ margin: 0, fontFamily: "sans-serif" }}>Enter into lobby</h2>
 
-        <TextField
-          id="outlined-basic"
-          label="Username"
-          variant="outlined"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <div style={{ display: "flex", gap: "12px", width: "100%" }}>
+          <TextField
+            id="outlined-basic"
+            label="Username"
+            variant="outlined"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            fullWidth
+            sx={{
+              "& .MuiOutlinedInput-root": { color: "white" },
+              "& .MuiInputLabel-root": { color: "#aaa" },
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#555" }
+            }}
+          />
 
-        <Button variant="contained" onClick={connect}>
-          Connect
-        </Button>
+          <Button variant="contained" onClick={connect} style={{ padding: "10px 24px" }}>
+            Connect
+          </Button>
+        </div>
 
-        <div>
-          <video ref={localVideoRef} autoPlay muted></video>
+        <div style={{ width: "100%", borderRadius: "8px", overflow: "hidden" }}>
+          <video
+            ref={localVideoRef}
+            autoPlay
+            muted
+            style={{ width: "100%", height: "auto", display: "block", borderRadius: "8px" }}
+          ></video>
         </div>
       </div>
     ) : (
