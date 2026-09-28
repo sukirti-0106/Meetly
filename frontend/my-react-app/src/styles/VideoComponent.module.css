@@ -1,4 +1,4 @@
-/* Container takes exact screen size without horizontal scrollbar */
+
 .meetVideoContainer {
   position: relative;
   height: 100vh;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* Main Video Section */
+
 .mainVideoArea {
   flex: 1;
   height: 100vh;
@@ -22,7 +22,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Floating Local Self-Video (Fixed top visibility over all elements) */
+
 .meetUserVideo {
   position: absolute;
   bottom: 85px;
@@ -37,7 +37,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-/* Equal Grid Layout - Max 2 Videos per row */
+
 .conferenceView {
   display: flex;
   flex-wrap: wrap;
@@ -52,11 +52,11 @@
   overflow-y: auto;
 }
 
-/* Video Frame Card - Horizontal kam aur Vertical thoda zyada */
+
 .conferenceView > div {
   width: 100%;
-  max-width: 580px; /* Video ki horizontal width control karne ke liye */
-  aspect-ratio: 16 / 9; /* Perfect video proportion ke liye */
+  max-width: 580px;
+  aspect-ratio: 16 / 9; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@
   height: 100%;
   object-fit: cover;
 }
-/* Bottom Control Navbar Overlay */
+
 .buttonContainer {
   bottom: 20px;
   left: 50%;
@@ -93,7 +93,7 @@
   font-size: 1.8rem;
 }
 
-/* Right-Side Chat Sidebar Panel */
+
 .chatRoom {
   position: relative;
   width: 330px;

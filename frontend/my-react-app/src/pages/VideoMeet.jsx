@@ -322,7 +322,7 @@ export default function VideoMeet() {
           };
 
           connections[socketListId].onaddstream = (event) => {
-            console.log("🔥 ON ADD STREAM FIRED", socketListId, event.stream);
+            console.log(" ON ADD STREAM FIRED", socketListId, event.stream);
 
             setVideos((videos) => {
               const videoExists = videos.find(
@@ -483,7 +483,7 @@ export default function VideoMeet() {
 
   let handleEndCall = () => {
     try {
-      // 1. Local tracks ko stop karo
+     
       if (window.localStream) {
         window.localStream.getTracks().forEach((track) => track.stop());
       }
@@ -492,13 +492,13 @@ export default function VideoMeet() {
         tracks.forEach((track) => track.stop());
       }
 
-      // 2. Peer connections band karo
+      
       for (let id in connections) {
         connections[id].close();
         delete connections[id];
       }
 
-      // 3. Socket disconnect karo
+    
       if (socketRef.current) {
         socketRef.current.disconnect();
       }
@@ -594,7 +594,7 @@ export default function VideoMeet() {
             overflow: "hidden"
           }}
         >
-          {/* Bottom Control Navbar */}
+         
           <div className={styles.buttonContainer}>
             <IconButton onClick={handleVideo} style={{ color: "white" }}>
               {video === true ? <VideocamIcon /> : <VideocamOffIcon />}
@@ -624,7 +624,7 @@ export default function VideoMeet() {
             </Badge>
           </div>
 
-          {/* Local Floating Video - Chat open hone par chhup jayega */}
+          
           {!showModal && (
             <video
               className={styles.meetUserVideo}
@@ -634,7 +634,7 @@ export default function VideoMeet() {
             ></video>
           )}
 
-          {/* Conference Videos View - Chat open hone par mobile par hidden rahega */}
+         
           <div
             className={styles.conferenceView}
             style={{
@@ -657,7 +657,7 @@ export default function VideoMeet() {
             ))}
           </div>
 
-          {/* 2. Chat Modal (Mobile Par Poori Screen Cover Karega) */}
+          
           {showModal && (
             <div
               className={styles.chatRoom}

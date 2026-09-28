@@ -7,7 +7,7 @@ export default function Landing() {
 
   return (
     <div className="landingPageContainer">
-      {/* Navigation Bar */}
+   
       <nav>
         <div className='nav-header'>
           <h1>Meet<span className="logo-highlight">ly</span></h1>
@@ -25,7 +25,7 @@ export default function Landing() {
         </div>
       </nav>
 
-      {/* Main Hero Section */}
+     
       <div className="landingPageMain">
         <div className="content glass-card">
           <h1>
@@ -41,7 +41,7 @@ export default function Landing() {
           </div>
         </div>
 
-        {/* Updated Right Section Image with Frame */}
+        
         <div className="right">
           <div className="heroImageFrame">
             <img 
@@ -53,7 +53,7 @@ export default function Landing() {
         </div>
       </div>
 
-      {/* Features Section */}
+     
       <div id="featuresSection" className="featuresWrapper">
         <h2 className="featuresTitle">
           Why Choose <span style={{ color: "#FF9839" }}>Meetly</span>?
